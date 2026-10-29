@@ -1,0 +1,24 @@
+{
+  "framework": "nextjs",
+  "regions": ["sin1", "iad1"],
+  "headers": [
+    {
+      "source": "/api/news",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=300, stale-while-revalidate=600"
+        }
+      ]
+    },
+    {
+      "source": "/api/reader",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=3600, stale-while-revalidate=7200"
+        }
+      ]
+    }
+  ]
+}
